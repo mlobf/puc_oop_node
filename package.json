@@ -1,10 +1,13 @@
 {
+  "type": "module",
   "name": "puc_oop_node",
   "version": "1.0.0",
   "description": "OOP classes for PUC-RS University",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +15,10 @@
   "devDependencies": {
     "@eslint/js": "^9.8.0",
     "eslint": "^9.8.0",
-    "globals": "^15.9.0"
+    "globals": "^15.9.0",
+    "prettier": "^3.3.3"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
   }
 }
