@@ -1,6 +1,8 @@
 import promptsync from "prompt-sync";
 let prompt = promptsync({ sigint: true });
 
+/*
+
 // Arranjos e lista , iteraveis no geral.
 console.log("--------------------" * 100);
 let lista = [10, 11, 12, 14, 55];
@@ -59,3 +61,32 @@ console.log(idades);
 
 let NewLista = new Array(10);
 console.log(NewLista);
+
+//
+// Dinamica
+let idades = [];
+let terminou = false;
+let count = 0;
+while (!terminou) {
+  let idade = Number(prompt(`Entre com a Idade do ${count} `));
+  if (Number(idade) == -1) {
+    break;
+  }
+  idades[count] = idade;
+  count++;
+}
+console.log(idades);
+//Achar a frequencia de uma idade apresentada.
+
+let idadeProcurada = prompt("Qual é a idade que vc gostaria de verificar ?");
+
+let frequencia = 0;
+for (let index = 0; index < idades.length; index++) {
+  const element = idades[index];
+  if (element == Number(idadeProcurada)) {
+    frequencia++;
+  }
+}
+console.log(
+  `A frequencia da idade informada é ${frequencia > 1 ? String(frequencia) : "Não houve frequencia"}`
+);
