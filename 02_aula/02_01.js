@@ -16,6 +16,9 @@ class Aluno {
   }
 }
 
+export { Aluno };
+
+/*
 let a1 = new Aluno("Joao", 1025, 8.2, 7.0);
 
 console.log(a1.notaP1);
@@ -28,3 +31,5 @@ console.log(a1.toString());
 // eu tenho a liberdade de alterar ele depois de criar o programa.
 
 // A solucao para isso é o encapsulamento.
+
+*/

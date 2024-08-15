@@ -22,6 +22,8 @@ class Pessoa {
   }
 }
 
+export { Pessoa };
+/*
 const pessoa = new Pessoa("João");
 
 console.log(pessoa.nome); // Chama o getter: Saída: 'João'
@@ -31,3 +33,4 @@ console.log(pessoa.nome); // Saída: 'Maria'
 
 pessoa.nome = ""; // Chama o setter, mas a validação falha
 console.log(pessoa.nome); // Saída: 'Maria' (não alterado)
+*/
