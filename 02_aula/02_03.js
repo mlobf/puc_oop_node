@@ -11,7 +11,7 @@ class outraTurma {
   constructor(nomeProfessor, numeroMatricula, alunos) {
     this.#nomeProfessor = nomeProfessor;
     this.#numeroMatricula = numeroMatricula;
-    this.#alunos = alunos;
+    this.#alunos = new Array(alunos);
   }
   get nomeProfessor() {
     return this.#nomeProfessor;
@@ -27,16 +27,30 @@ class outraTurma {
     let addAluno = new Aluno(novoAluno);
     this.#alunos = addAluno;
   }
+
   toString() {
     return console.log(
-      `Esta turma tem o professor ${this.nomeProfessor}, e tem estes alunos ${this.alunos}}`
+      `Esta turma tem o professor ${this.nomeProfessor}, e tem estes alunos ${this.alunos}`
     );
   }
 }
 let a = new Aluno("Marcos", 39393, 10, 10);
-let m = new outraTurma("Hasime", 100000, a);
+let b = new Aluno("Luciana", 11193, 10, 10);
+let c = new Aluno("Maria", 999393, 10, 10);
+let d = new Aluno("Rey", 11111, 10, 10);
+let e = new Aluno("Joana", 6666, 10, 10);
 
-m.toString();
+let m = new outraTurma("Hasime", 100000);
+
+m.alunos[0] = a;
+m.alunos[1] = b;
+m.alunos[2] = c;
+m.alunos[3] = d;
+m.alunos[4] = e;
+
+//m.toString();
+
+console.log(m.alunos);
 
 /*
 this.nome = String(nome);
