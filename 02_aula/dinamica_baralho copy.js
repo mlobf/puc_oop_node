@@ -8,9 +8,9 @@ interface publica da classe deve ter metodos proprios para:
 */
 
 class Carta {
-  #naipe;
-  #valor;
-  #faceParaCima;
+  #naipe; //Representa o naipe da carta
+  #valor; // Representa o valor base da carta
+  #faceParaCima; // Representa o
   constructor(naipe, valor) {
     this.#naipe = naipe;
     this.#valor = valor;
@@ -90,30 +90,42 @@ class Carta {
 class Baralho {
   #cartas;
   #topo;
+
+  static aux = new Carta("ouros", "A");
+  static naipes = Baralho.aux.naipes();
+
   constructor() {
-    this.#cartas = new Array(52);
-    // Gambiarra para ter acesso aos atributos do objeto carta.
-    let aux = new Carta("ouros", "A");
-    let naipes = aux.naipes();
-    let valores = aux.valores();
+    this.#cartas = this.addCartas();
+  }
+
+  addCartas() {
+    //let base = new Array(52);
+    let base = new Array();
+    let naipes = Baralho.aux.naipes();
+    let valores = Baralho.aux.valores();
     let c = null;
     this.#topo = 0;
 
     for (let n = 0; n < naipes.length; n++) {
       for (let v = 0; v < valores.length; v++) {
         c = new Carta(naipes[n], valores[v]);
-        this.#cartas[this.#topo] = c;
-        this.#topo++;
+        //base[this.#topo] = c;
+        base.push(c);
+        //this.#topo++;
       }
+      return base;
     }
   }
-  toString() {
-    let str = `Quantidade : ${this.#topo}`;
-    for (let i = 0; i < this.#topo; i++) {
-      str = str + `[${this.#cartas[i].toString()}]`;
-      return str + `/n`;
-    }
+
+  get cartas() {
+    return this.#cartas;
   }
 }
+
 let b = new Baralho();
-console.log(b.toString());
+//console.log(b.toString());
+//console.log(b.cartas);
+//console.log(Carta.naipe);
+let c = new Carta("paus", 10);
+console.log(c.naipes());
+console.log(c.valores());
