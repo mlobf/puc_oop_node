@@ -99,5 +99,11 @@ class Carta {
     return console.log(`${this.#valor},${this.#naipe}`);
   }
 }
+
 let newCarta = new Carta("paus", "A");
+
 newCarta.toString();
+
+for (let index = 0; index < 1000; index++) {
+  console.log(Math.round(Math.random(100) * 100));
+}

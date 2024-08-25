@@ -3,12 +3,24 @@
 import { validate } from "bycontract";
 
 class Carro {
-  constructor(placa, marcaModelo, tamTanque, consumo, comboNoTanque) {
-    this.placa = placa;
-    this.marcaModelo = marcaModelo;
-    this.tamTanque = tamTanque;
-    this.comboNoTanque = comboNoTanque;
-    this.consumo = consumo;
+  #placa;
+  #marcaModelo;
+  #tamTanque;
+  #consumo;
+  #comboNoTanque;
+
+  constructor(placa, marcaModelo, tamTanque, consumo) {
+    validate(arguments, ["string", "string", "number", "number"]);
+    this.#placa = placa;
+    this.#marcaModelo = marcaModelo;
+    if (tamTanque < 0) {
+      this.#tamTanque = 45;
+    } else {
+      this.#tamTanque = tamTanque;
+    }
+    this.#tamTanque = tamTanque;
+    this.#consumo = consumo;
+    this.#comboNoTanque = 0;
   }
   //Entrega o combustivel necessario para percorrer uma
   // determinada distancia informada.
