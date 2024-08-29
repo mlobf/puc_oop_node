@@ -73,6 +73,15 @@ class Professor extends Funcionario {
     let sl = sb - inss;
     return sl;
   }
+
+  toString() {
+    return (
+      super.toString() +
+      " , " +
+      this.cargaHorariaMensal +
+      " é a carga horaria mensal ."
+    );
+  }
 }
 
 class Pesquisador extends Professor {
@@ -98,3 +107,28 @@ class Pesquisador extends Professor {
     return super.cargaHorariaMensal + this.#cargaHorarioPesquisa;
   }
 }
+// Escreva uma funcao que recebe um Funcionario e acrescenta 3 horas de pesquisa se ele for pesquisador  e 5 horas  de aula
+// se ele for professor mas nao pesquisador
+
+function acrescentaHoras(funcionario) {
+  validate(funcionario, Funcionario);
+  if (funcionario instanceof Pesquisador) {
+    funcionario.cargaHoraPesquisa += 3;
+  } else {
+    if (funcionario instanceof Professor) {
+      funcionario.cargaHorariaMensal += 5;
+    }
+  }
+  return console.log("oi");
+}
+
+let p = new Pesquisador("Marcos Pesquisador", 1000, 44, 3);
+let t = new Tecnico("Marcos Tecnico", 1000, 44, 3);
+
+console.log(p.toString());
+console.log(t.toString());
+
+acrescentaHoras(p);
+acrescentaHoras(t);
+console.log(p.toString());
+console.log(t.toString());
