@@ -26,7 +26,9 @@ class TwoSums {
     let p1 = 0;
     let p2 = p1 + 1;
     while (p1 !== this.#lista.length - 1) {
+      //while (p1 < this.#lista.length - 1) {
       while (p2 !== this.#lista.length) {
+        //while (p2 < this.#lista.length) {
         let v1 = this.#lista[p1];
         let v2 = this.#lista[p2];
         let soma = v1 + v2;
